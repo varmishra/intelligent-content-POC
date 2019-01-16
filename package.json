@@ -1,0 +1,35 @@
+{
+	"name": "AppCustomSplitOmega",
+	"version": "0.0.2",
+	"description": "Backend for the Salesforce Service Cloud custom split activity",
+	"main": "backend/server.js",
+	"scripts": {
+		"start": "node backend/server.js"
+	},
+	"dependencies": {
+		"body-parser": "^1.17.1",
+		"build-url": "^1.2.0",
+		"cors": "^2.8.4",
+		"debug": "^4.0.0",
+		"errorhandler": "^1.5.0",
+		"express": "^4.15.2",
+		"jsforce": "^1.9.1",
+		"json-bigint": "^0.3.0",
+		"jsonwebtoken": "^8.3.0",
+		"moment": "^2.22.2",
+		"npm": "^6.4.1",
+		"pg": "^6.1.0",
+		"pug": "^2.0.3",
+		"simple-oauth2": "^2.2.1",
+		"url": "^0.11.0"
+	},
+	"options": {
+		"salesforce": {
+			"marketingCloud": {
+				"user_id": "webmaster_portal@lilly.com",
+				"password": "1ntegrat10nacc0unt",
+				"client_id": "wsA9V36AR39A6Apn92J6DYFUNs8dvDMm"
+			}
+		}
+	}
+}

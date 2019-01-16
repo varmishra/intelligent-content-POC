@@ -1,0 +1,108 @@
+{
+	"workflowApiVersion": "1.1",
+	"metaData": {
+		"icon": "images/icon.png",
+		"iconSmall": "images/icon_small.png",
+		"category":"flow"
+	},
+	"type": "RESTDECISION",
+	"lang": {
+		"en-US": {
+			"name": "GTW Split",
+			"description": "Custom Split activity that makes a decision based on data from GoToWebinar"
+		}
+	},
+	"arguments": {
+		"execute": {
+			"inArguments": [],
+			"outArguments": [],
+			"url": "https://desolate-brook-20418.herokuapp.com/activity/execute",
+			"verb": "POST",
+			"body": "",
+			"header": "",
+			"format": "json",
+			"useJwt": true,
+			"timeout": 10000
+		}
+	},
+	"configurationArguments": {
+      "applicationExtensionKey": "0ad06806-f5a2-4b83-a26e-2ee51b31f23d",
+		"save": {
+			"url": "https://desolate-brook-20418.herokuapp.com/activity/save",
+			"verb": "POST",
+			"useJwt": true
+		},
+		"publish": {
+			"url": "https://desolate-brook-20418.herokuapp.com/activity/publish",
+			"verb": "POST",
+			"useJwt": true
+		},
+		"stop": {
+			"url": "https://desolate-brook-20418.herokuapp.com/activity/stop",
+			"verb": "POST",
+			"useJwt": true
+		},
+		"validate": {
+			"url": "https://desolate-brook-20418.herokuapp.com/activity/validate",
+			"verb": "POST",
+			"useJwt": true
+		}
+	},
+	"outcomes": [
+		{
+			"arguments": {
+				"branchResult": "yes"
+			},
+			"metaData": {
+				"label": "Registered"
+			}
+		},
+		{
+			"arguments": {
+				"branchResult": "no"
+			},
+			"metaData": {
+				"label": "Unregistered"
+			}
+		},
+		{
+			"arguments": {
+				"branchResult": "error"
+			},
+			"metaData": {
+				"label": "Unprocessed"
+			}
+		}
+	],
+	"wizardSteps": [
+		{"key": "selectwebinar", "label": "Select Webinar"},
+		{"key": "summary", "label": "Summary"}
+	],
+	"userInterfaces": {
+		"configModal": {
+            "height": 400,
+            "width": 800,
+          "fullscreen": false
+        }
+	},
+    "schema": {
+        "arguments": {
+            "execute": {
+                "inArguments": [{
+                	"emailAddress": {
+	                    "dataType": "Email",
+	                    "isNullable": false,
+	                    "direction": "in"
+	                }
+                }],
+                "outArguments": []
+            }
+        }
+    },
+	"edit": {
+		"url": "https://desolate-brook-20418.herokuapp.com/",
+		"height": 400,
+		"width": 700,
+		"fullscreen":false
+	}
+}
