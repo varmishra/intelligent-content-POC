@@ -51,32 +51,41 @@
 	"outcomes": [
 		{
 			"arguments": {
-				"branchResult": "yes"
+				"branchResult": "veryLikely"
 			},
 			"metaData": {
-				"label": "Registered"
+				"label": "Very Likely"
 			}
 		},
 		{
 			"arguments": {
-				"branchResult": "no"
+				"branchResult": "ikely"
 			},
 			"metaData": {
-				"label": "Unregistered"
+				"label": "Likely"
 			}
 		},
 		{
 			"arguments": {
-				"branchResult": "error"
+				"branchResult": "neutral"
 			},
 			"metaData": {
-				"label": "Unprocessed"
+				"label": "Neutral"
+			}
+		},
+		{
+			"arguments":{
+				"branchResult":"unlikely"
+
+			},
+			"metaData": {
+				"label":"unlikely"
 			}
 		}
 	],
 	"wizardSteps": [
-		{"key": "selectwebinar", "label": "Select Webinar"},
-		{"key": "summary", "label": "Summary"}
+		{"key": "selectAction", "label": "Select Action"},
+		{"key": "configuration", "label": "Configuration"}
 	],
 	"userInterfaces": {
 		"configModal": {
