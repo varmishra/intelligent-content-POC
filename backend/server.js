@@ -22,8 +22,8 @@ const routes = require(Path.join(__dirname, 'routes'));
 const cors = require('cors')
 
 
-app.set('views', Path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
+// app.set('views', Path.join(__dirname, 'views'));
+// app.set('view engine', 'pug');
 
 
 var whitelist = ['https://mc.s7.exacttarget.com', 'https://intranet.omegacrmconsulting.com', 'http://localhost:3000']
@@ -52,22 +52,22 @@ app.use(express.static(Path.join(__dirname, '..', 'public')));
 // Route that is called for every contact who reaches the custom split activity
 
 
-app.get('/',  routes.index);
-app.get('/token',  routes.token);
-app.post('/login',  routes.login);
-app.post('/logout',  routes.logout);
+app.get('/', routes.index);
+app.get('/token', routes.token);
+app.post('/login', routes.login);
+app.post('/logout', routes.logout);
 
-app.get('/gtw/getWebinars',  gtw.getWebinars);
-app.get('/gtw/getWebinar/:webinarKey',  gtw.getWebinar);
+app.get('/gtw/getWebinars', gtw.getWebinars);
+app.get('/gtw/getWebinar/:webinarKey', gtw.getWebinar);
 //app.get('/gtw/getToken',  gtw.getToken);
 
 
 // Route that is called for every contact who reaches the custom split activity
-app.post('/activity/execute',  activity.execute);
+app.post('/activity/execute', activity.execute);
 
-app.post('/activity/publish',  activity.publish);
-app.post('/activity/validate',  activity.validate);
-app.post('/activity/save',  activity.save);
+app.post('/activity/publish', activity.publish);
+app.post('/activity/validate', activity.validate);
+app.post('/activity/save', activity.save);
 
 
 // Start the server and listen on the port specified by heroku or defaulting to 3000
@@ -75,4 +75,3 @@ app.listen(process.env.PORT || 3000, () => {
 
     console.log(process.env.PORT + ': Service Cloud customsplit backend is now running!');
 });
-
